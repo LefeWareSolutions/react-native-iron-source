@@ -4,7 +4,12 @@
   "description": "React Native package to interface the ironSource SDK.  https://ironsrc.com",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./scripts/linkSKAdNetwork.sh SU67R6K2V3 ../../.."
+    "postinstall": "cross-os ios-link"
+  },
+  "cross-os": {
+    "ios-link": {
+      "darwin": "./scripts/linkSKAdNetwork.sh SU67R6K2V3 ../../.."
+    }
   },
   "bin": {
     "rnis-linker": "./scripts/linkSKAdNetwork.sh"
@@ -30,5 +35,8 @@
   },
   "devDependencies": {
     "json": "^10.0.0"
+  },
+  "dependencies": {
+    "cross-os": "^1.4.0"
   }
 }
